@@ -15,7 +15,7 @@ import os
 import typing
 from typing import Any, Dict, List, Optional, Union
 
-import uvicorn  # type: ignore
+import uvicorn
 from dotenv import load_dotenv
 from fastapi import Depends, FastAPI
 from fastapi.requests import Request
@@ -1189,4 +1189,4 @@ app = CustomCORSMiddleware(  # type: ignore
 )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=get_api_port())  # type: ignore
+    uvicorn.run(app, host="0.0.0.0", port=get_api_port())
