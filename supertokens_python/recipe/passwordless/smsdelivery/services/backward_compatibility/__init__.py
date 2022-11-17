@@ -63,7 +63,7 @@ async def create_and_send_sms_using_supertokens_service(
 
         if isinstance(e, HTTPStatusError):  # type: ignore
             res: Response = e.response  # type: ignore
-            if res.status_code != 429:  # type: ignore (429 == Too many requests)
+            if res.status_code != 429:  # type: ignore # (429 == Too many requests)
                 data = res.json()
                 if "err" in data:
                     raise Exception(data["err"])
