@@ -16,7 +16,7 @@ import os
 import sys
 from typing import Any, Dict, Union
 
-import uvicorn  # type: ignore
+import uvicorn
 from fastapi import Depends, FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
 from starlette.exceptions import ExceptionMiddleware
@@ -556,4 +556,4 @@ app = CORSMiddleware(
 )
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)  # type: ignore
+    uvicorn.run(app, host="0.0.0.0", port=8080)
