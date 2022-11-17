@@ -17,7 +17,7 @@ extras_require = {
         [
             "respx==0.19.2",
             "Fastapi",
-            "uvicorn==0.18.2",
+            "uvicorn",
             "python-dotenv==0.19.2",
         ]
     ),
@@ -33,7 +33,7 @@ extras_require = {
             "django-cors-headers==3.11.0",
             "django>=3",
             "django-stubs==1.9.0",
-            "uvicorn==0.18.2",
+            "uvicorn",
             "python-dotenv==0.19.2",
         ]
     ),
