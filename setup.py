@@ -63,6 +63,7 @@ exclude_list = [
     "html",
     "pyrightconfig.json",
     "Makefile",
+    ".mypy_cache",
     ".pylintrc",
     "dev-requirements.txt",
     "docs-templates",
