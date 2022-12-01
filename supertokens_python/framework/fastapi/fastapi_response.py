@@ -49,31 +49,18 @@ class FastApiResponse(BaseResponse):
         httponly: bool = False,
         samesite: str = "lax",
     ):
-        if domain is None:
-            # we do ceil because if we do floor, we tests may fail where the access
-            # token lifetime is set to 1 second
-            self.response.set_cookie(
-                key=key,
-                value=value,
-                expires=ceil((expires - int(time() * 1000)) / 1000),
-                path=path,
-                secure=secure,
-                httponly=httponly,
-                samesite=samesite,
-            )
-        else:
-            # we do ceil because if we do floor, we tests may fail where the access
-            # token lifetime is set to 1 second
-            self.response.set_cookie(
-                key=key,
-                value=value,
-                expires=ceil((expires - int(time() * 1000)) / 1000),
-                path=path,
-                domain=domain,
-                secure=secure,
-                httponly=httponly,
-                samesite=samesite,
-            )
+        # we do ceil because if we do floor, we tests may fail where the access
+        # token lifetime is set to 1 second
+        self.response.set_cookie(
+            key=key,
+            value=value,
+            expires=ceil((expires - int(time() * 1000)) / 1000),
+            path=path,
+            domain=domain,
+            secure=secure,
+            httponly=httponly,
+            samesite=samesite,
+        )
 
     def set_header(self, key: str, value: str):
         self.response.headers[key] = value
