@@ -53,7 +53,7 @@ if TYPE_CHECKING:
     )
     from .recipe import SessionRecipe
 
-from supertokens_python.logger import log_debug_message
+from supertokens_python.logger import log_debug_message, log_error_message
 
 
 def normalise_session_scope(session_scope: str) -> str:
@@ -452,7 +452,7 @@ def validate_and_normalise_user_input(
     ):
         # We can allow insecure cookie when both website & API domain are localhost or an IP
         # When either of them is a different domain, API domain needs to have https and a secure cookie to work
-        raise_general_exception(
+        log_error_message(
             "Since your API and website domain are different, for sessions to work, please use "
             "https on your apiDomain and don't set cookieSecure to false."
         )
