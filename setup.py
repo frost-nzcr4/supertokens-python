@@ -17,14 +17,14 @@ extras_require = {
         [
             "Fastapi",
             "uvicorn",
-            "python-dotenv==0.19.2",
+            "python-dotenv>=0.19.2",
         ]
     ),
     "flask": (
         [
             "flask_cors",
             "Flask",
-            "python-dotenv==0.19.2",
+            "python-dotenv>=0.19.2",
             # flask depends on this and flask has > '2.0' for this. However, the version before 2.1.0 breaks our lib.
             "Werkzeug>=2.0,<2.1.0",
         ]
@@ -35,7 +35,7 @@ extras_require = {
             "django>=3",
             "django-stubs==1.9.0",
             "uvicorn",
-            "python-dotenv==0.19.2",
+            "python-dotenv>=0.19.2",
         ]
     ),
     "django2x": (
@@ -44,7 +44,7 @@ extras_require = {
             "django>=2,<3",
             "django-stubs==1.9.0",
             "gunicorn==20.1.0",
-            "python-dotenv==0.19.2",
+            "python-dotenv>=0.19.2",
         ]
     ),
 }
